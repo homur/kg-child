@@ -194,28 +194,6 @@ class Home_Page_Title extends Widget_Base {
     top: 0;
     background: rgba(18, 21, 24, 0.4);
   }
-  
-.buttons-container {
-  width: 92px;
-  height: 32px;
-  display: inline-flex;
-  margin-right: 40px;
-}
-.buttons-container p {
-	margin: 0
-}
-.buttons-container svg {
-	margin-left: 12.67px
-}
-.buttons-container .trans-button {
-    color: #fff;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
 .page-title-content-inner-container {
   width: 100%;
   margin: 0 auto;
@@ -233,38 +211,6 @@ class Home_Page_Title extends Widget_Base {
   color: #69BFF0;
   font-weight: 700;
   margin-bottom: 0px;
-}
-.button-container > a.button {
-  border: 0;
-  margin: 0;
-  width: 133px;
-  height: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-radius: 0;
-  line-height: 18px;
-  padding: 19px 22px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #69bff0 !important;
-}
-
-.button-container > a.button:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.button-container > a.button > p {
-  margin: 0;
-  width: 89px;
-  font-size: 16px;
-  font-weight: 600;
-}
-.get-quote-btn-container {
-	display: inline-flex;
-    margin-right: 40px;
 }
 </style>';
 		echo '<div class="page-title-hero">';
