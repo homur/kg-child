@@ -15,6 +15,7 @@ class Elementor_Widgets
 
     protected function __construct()
     {
+        require_once('widgets/post-grid.php');
         require_once('widgets/test_widget.php');
         require_once('widgets/section_title.php');
         require_once('widgets/home_page_title.php');
@@ -32,6 +33,7 @@ class Elementor_Widgets
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Home_What_We_Can());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Full_Width_Button());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Natural_Page_Title());
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Cstm_Post_Grid_Widget());
 
     }
 
