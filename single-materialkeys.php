@@ -17,22 +17,21 @@ defined('ABSPATH') || exit;
 
 	<div class="fuild-container" id="content" tabindex="-1">
 
-		<!-- <div class="row"> -->
-			<!-- <div class="col-sm-12"> -->
+		<div class="row">
+			<div class="col-sm-12">
 				<main class="site-main" id="main">
 					<?php
 					while (have_posts()) {
 						the_post();
-						get_template_part('loop-templates/content', 'material');
+						get_template_part('loop-templates/content', 'transheader');
 						// understrap_post_nav();
 
 					}
 					?>
 
 				</main><!-- #main -->
-			<!-- </div> -->
-			<!-- </div> -->
-			<!-- .row -->
+			</div>
+			</div><!-- .row -->
 
 		</div><!-- #content -->
 

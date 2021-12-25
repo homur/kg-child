@@ -2,21 +2,21 @@
 
 namespace Elementor;
 
-class Section_Title extends Widget_Base
+class Curved_Button extends Widget_Base
 {
 	public function get_name()
 	{
-		return 'Section Title';
+		return 'Curved Button';
 	}
 
 	public function get_title()
 	{
-		return __('Section Title', 'plugin-name');
+		return __('Curved Button', 'plugin-name');
 	}
 
 	public function get_icon()
 	{
-		return 'fa fa-font';
+		return 'fa fa-plug';
 	}
 
 	public function get_categories()
@@ -58,19 +58,29 @@ class Section_Title extends Widget_Base
 		);
 
 		$this->add_control(
-			'title',
+			'button_text',
 			[
-				'label' => __('Title', 'plugin-name'),
+				'label' => __('Button Text', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __('Section Title', 'plugin-domain'),
-				'placeholder' => __('Section Title', 'plugin-name'),
+				'default' => __('Title', 'plugin-domain'),
+				'placeholder' => __('Title', 'plugin-name'),
 			]
 		);
 
 		$this->add_control(
-			'title_color',
+			'button_width',
 			[
-				'label' => __('Title Color', 'plugin-name'),
+				'label' => __('Button Width', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => __('75px', 'plugin-domain'),
+				'placeholder' => __('title width', 'plugin-name'),
+			]
+		);
+
+		$this->add_control(
+			'button_text_color',
+			[
+				'label' => __('Button Text Color', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'COLOR',
 				'default' => __('#262D36', 'plugin-domain'),
@@ -79,9 +89,9 @@ class Section_Title extends Widget_Base
 		);
 
 		$this->add_control(
-			'divider_color',
+			'button_color',
 			[
-				'label' => __('Devider Color', 'plugin-name'),
+				'label' => __('Button Color', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'COLOR',
 				'default' => __('#69BFF0', 'plugin-domain'),
@@ -89,21 +99,9 @@ class Section_Title extends Widget_Base
 			]
 		);
 
-		$this->add_control(
-			'hide_divider',
-			[
-				'label' => __('hide_divider', 'plugin-name'),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__('Show', 'your-plugin'),
-				'label_off' => esc_html__('Hide', 'your-plugin'),
-				// 'return_value' => 'No',
-				'default' => 'No',
-			]
-		);
-
 		$this->end_controls_section();
 	}
-
+// TODO: add link for button
 	/**
 	 * Render oEmbed widget output on the frontend.
 	 *
@@ -117,18 +115,17 @@ class Section_Title extends Widget_Base
 
 		$settings = $this->get_settings_for_display();
 
-		$title = $settings["title"];
-		$divider_color = $settings["divider_color"];
-		$title_color = $settings["title_color"];
-		$hide_divider = $settings['hide_divider'];
+		$button_text = $settings["button_text"];
+		$button_color = $settings["button_color"];
+		$button_width = $settings["button_width"];
+		$button_text_color = $settings["button_text_color"];
 
-		echo '<div class="cfuild-ontainer">';
-		if ($hide_divider == "No") {
-		echo '	<svg width="120" height="3" viewBox="0 0 120 3" fill="none" xmlns="http://www.w3.org/2000/svg">';
-		echo '		<rect class="section-heading-icon" width="120" height="2.05128" fill=' . $divider_color . ' />';
-		echo '	</svg>';
-		}
-		echo '	<h2 class="custom-section-heading" style="color: ' . $title_color . '">' . $title . '</h2>';
+		echo '<div class="carved-button-container" style="width: ' . $button_width . '">';
+		echo '	<a href="#" class="btn btn-primary btn-block carved-button" style="background-color: ' . $button_color . '" role="button" aria-pressed="true">';
+		echo '		<div class="carved-button-content">';
+		echo '			<p class="carved-button-title" style="color:' . $button_text_color . '">' . $button_text . '</p>';
+		echo '		</div>';
+		echo '	</a>';
 		echo '</div>';
 	}
 }

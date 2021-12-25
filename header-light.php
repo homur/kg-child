@@ -44,7 +44,7 @@ $container = get_theme_mod('understrap_container_type');
 
 			jQuery('[data-toggle="affix"]').each(function() {
 				var ele = jQuery(this);
-				var	wrapper = jQuery('<div></div>');
+				var wrapper = jQuery('<div></div>');
 
 				// ele.before(wrapper);
 				jQuery(window).on('scroll resize', function() {
@@ -92,9 +92,15 @@ $container = get_theme_mod('understrap_container_type');
 						<?php endif; ?>
 
 					<?php
-					} else {
-						the_custom_logo();
-					}
+					} else { ?>
+						<a href="<?php echo esc_url(home_url('/')); ?>" 
+						class="navbar-brand custom-logo-link" 
+						rel="home">
+						<img width="137" height="60" 
+						src="<?php echo esc_url(home_url('/')) . "wp-content/uploads/2021/12/dark.png"; ?>" 
+						class="img-fluid" 
+						alt="Knight Group"></a>
+					<?php }
 					?>
 					<!-- end custom logo -->
 
@@ -131,7 +137,7 @@ $container = get_theme_mod('understrap_container_type');
 
 			<nav id="main-nav" class="navbar kg-navbar navbar-expand-md" aria-labelledby="main-nav-label">
 
-				<h2 id="main-nav-label" class="sr-only">
+				<h2 id="main-nav-label affix-navbar" class="sr-only">
 					<?php esc_html_e('Main Navigation', 'understrap'); ?>
 				</h2>
 
@@ -164,6 +170,7 @@ $container = get_theme_mod('understrap_container_type');
 					</button>
 
 					<!-- The WordPress Menu goes here -->
+					<!-- <div class="affix-navbar-menu"> -->
 					<?php
 					wp_nav_menu(
 						array(
@@ -178,6 +185,7 @@ $container = get_theme_mod('understrap_container_type');
 						)
 					);
 					?>
+					<!-- </div> -->
 					<?php if ('container' === $container) : ?>
 					</div><!-- .container -->
 				<?php endif; ?>

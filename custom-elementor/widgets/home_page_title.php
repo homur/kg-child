@@ -28,7 +28,7 @@ class Home_Page_Title extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Home Page Title', 'plugin-name' );
+		return __( 'Page Title', 'plugin-name' );
 	}
 
 	/**

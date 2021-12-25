@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Transparent Header
+ * Template Name: Dark Header
  *
  * Template for displaying a page without sidebar even if a sidebar widget is published.
  *
@@ -12,8 +12,8 @@
 defined('ABSPATH') || exit;
 
 ?>
-<div class="transparent-header">
-	<?php get_header(); ?>
+<div class="dark-header">
+	<?php get_header('dark'); ?>
 </div>
 <?php
 
@@ -22,7 +22,7 @@ defined('ABSPATH') || exit;
 // }
 ?>
 <!-- class="wrapper"  -->
-<div id="transparent-header-page-wrapper">
+<div id="dark-header-page-wrapper">
 	<?php
 	while (have_posts()) {
 		?>

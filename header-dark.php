@@ -44,7 +44,7 @@ $container = get_theme_mod('understrap_container_type');
 
 			jQuery('[data-toggle="affix"]').each(function() {
 				var ele = jQuery(this);
-				var	wrapper = jQuery('<div></div>');
+				var wrapper = jQuery('<div></div>');
 
 				// ele.before(wrapper);
 				jQuery(window).on('scroll resize', function() {
@@ -131,7 +131,7 @@ $container = get_theme_mod('understrap_container_type');
 
 			<nav id="main-nav" class="navbar kg-navbar navbar-expand-md" aria-labelledby="main-nav-label">
 
-				<h2 id="main-nav-label" class="sr-only">
+				<h2 id="main-nav-label affix-navbar" class="sr-only">
 					<?php esc_html_e('Main Navigation', 'understrap'); ?>
 				</h2>
 
@@ -164,6 +164,7 @@ $container = get_theme_mod('understrap_container_type');
 					</button>
 
 					<!-- The WordPress Menu goes here -->
+					<!-- <div class="affix-navbar-menu"> -->
 					<?php
 					wp_nav_menu(
 						array(
@@ -178,6 +179,7 @@ $container = get_theme_mod('understrap_container_type');
 						)
 					);
 					?>
+					<!-- </div> -->
 					<?php if ('container' === $container) : ?>
 					</div><!-- .container -->
 				<?php endif; ?>

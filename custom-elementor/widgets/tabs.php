@@ -2,16 +2,16 @@
 
 namespace Elementor;
 
-class Natural_Page_Title extends Widget_Base
+class Tabs extends Widget_Base
 {
 	public function get_name()
 	{
-		return 'Natural_Page_Title';
+		return 'Tabs';
 	}
 
 	public function get_title()
 	{
-		return __('Natural Page Title', 'plugin-name');
+		return __('Tabs', 'plugin-name');
 	}
 
 	public function get_icon()
@@ -85,7 +85,6 @@ class Natural_Page_Title extends Widget_Base
 				'default' => 'No',
 			]
 		);
-
 
 		$this->end_controls_section();
 
@@ -191,7 +190,7 @@ class Natural_Page_Title extends Widget_Base
 			$count = 0;
 			foreach ($settings['list_items'] as $items => $item) {
 				$title = $item['list_item_title'];
-				$list_item_link = $item['list_item_link']['url'];
+				$list_item_link = $item['list_item_link'];
 				$list_item_icon = $item['list_item_icon']['url'];
 ?>
 				<div class="help-buttons-list-item">

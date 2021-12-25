@@ -16,7 +16,7 @@ class Full_Width_Button extends Widget_Base
 
 	public function get_icon()
 	{
-		return 'fa fa-font';
+		return 'fa fa-plug';
 	}
 
 	public function get_categories()

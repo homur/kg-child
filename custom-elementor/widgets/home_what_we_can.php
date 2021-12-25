@@ -2,21 +2,26 @@
 
 namespace Elementor;
 
-class Home_What_We_Can extends Widget_Base {
-	public function get_name() {
+class Home_What_We_Can extends Widget_Base
+{
+	public function get_name()
+	{
 		return 'Home_What_We_Can';
 	}
 
-	public function get_title() {
-		return __( 'Home What We Can', 'plugin-name' );
+	public function get_title()
+	{
+		return __('What We Can', 'plugin-name');
 	}
 
-	public function get_icon() {
+	public function get_icon()
+	{
 		return 'fa fa-plug';
 	}
 
-	public function get_categories() {
-		return [ 'kg-widgets' ];
+	public function get_categories()
+	{
+		return ['kg-widgets'];
 	}
 
 	/**
@@ -27,12 +32,13 @@ class Home_What_We_Can extends Widget_Base {
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function _register_controls()
+	{
 
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => __( 'Content', 'plugin-name' ),
+				'label' => __('Main Title', 'plugin-name'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -40,58 +46,50 @@ class Home_What_We_Can extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Section Title', 'plugin-name' ),
+				'label' => __('The Title', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => 'What we can do for you',
-				'placeholder' => __( 'Enter title here', 'plugin-name' ),
+				'placeholder' => __('Enter title here', 'plugin-name'),
 			]
 		);
-		
-				$this->add_control(
-			'video_url',
+
+		$this->end_controls_section();
+
+		// 1st section 
+
+		$this->start_controls_section(
+			'1st_section',
 			[
-				'label' => __('video url', 'plugin-name'),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __('https://wordpress-497576-2250197.cloudwaysapps.com/wp-content/uploads/2021/11/1056399188-preview.mp4', 'plugin-domain'),
-				'placeholder' => __('Path to your video', 'plugin-name'),
+				'label' => __('1st Section', 'plugin-name'),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->add_control(
-			'stripBtnUrl',
+			'1st_title',
 			[
-				'label' => __('strip button Url', 'plugin-name'),
+				'label' => __('Section Title', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __('#', 'plugin-domain'),
+				'default' => 'Bespoke processing',
+				'placeholder' => __('Enter title here', 'plugin-name'),
+			]
+		);
+
+		$this->add_control(
+			'1st_description',
+			[
+				'label' => __('Description', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'default' => __('With impressive Precision Strip And Wire processing capabilities that include slitting and shearing, traverse winding, cut to length and edge dressing, you can have your material, your way.', 'plugin-domain'),
 				'placeholder' => __('Enter link here', 'plugin-name'),
 			]
 		);
 
 		$this->add_control(
-			'wireBtnUrl',
+			'1st_link',
 			[
-				'label' => __('wire button Url', 'plugin-name'),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __('#', 'plugin-domain'),
-				'placeholder' => __('Enter link here', 'plugin-name'),
-			]
-		);
-
-		$this->add_control(
-			'wireBtnUrl',
-			[
-				'label' => __('wire button Url', 'plugin-name'),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __('#', 'plugin-domain'),
-				'placeholder' => __('Enter link here', 'plugin-name'),
-			]
-		);
-
-		$this->add_control(
-			'getQuoteBtnUrl',
-			[
-				'label' => __('Get a Quote button Url', 'plugin-name'),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'label' => __('Section Link', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::URL,
 				'default' => __('#', 'plugin-domain'),
 				'placeholder' => __('Enter link here', 'plugin-name'),
 			]
@@ -99,6 +97,131 @@ class Home_What_We_Can extends Widget_Base {
 
 		$this->end_controls_section();
 
+		// 2nd section 
+
+		$this->start_controls_section(
+			'2nd_section',
+			[
+				'label' => __('2nd Section', 'plugin-name'),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'2nd_title',
+			[
+				'label' => __('Section Title', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => 'Bespoke processing',
+				'placeholder' => __('Enter title here', 'plugin-name'),
+			]
+		);
+
+		$this->add_control(
+			'2nd_description',
+			[
+				'label' => __('Description', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'default' => __('With impressive Precision Strip And Wire processing capabilities that include slitting and shearing, traverse winding, cut to length and edge dressing, you can have your material, your way.', 'plugin-domain'),
+				'placeholder' => __('Enter link here', 'plugin-name'),
+			]
+		);
+
+		$this->add_control(
+			'2nd_link',
+			[
+				'label' => __('Section Link', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::URL,
+				'default' => __('#', 'plugin-domain'),
+				'placeholder' => __('Enter link here', 'plugin-name'),
+			]
+		);
+
+		$this->end_controls_section();
+
+		// 3rd section 
+
+		$this->start_controls_section(
+			'3rd_section',
+			[
+				'label' => __('3rd Section', 'plugin-name'),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'3rd_title',
+			[
+				'label' => __('Section Title', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => 'Bespoke processing',
+				'placeholder' => __('Enter title here', 'plugin-name'),
+			]
+		);
+
+		$this->add_control(
+			'3rd_description',
+			[
+				'label' => __('Description', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'default' => __('With impressive Precision Strip And Wire processing capabilities that include slitting and shearing, traverse winding, cut to length and edge dressing, you can have your material, your way.', 'plugin-domain'),
+				'placeholder' => __('Enter link here', 'plugin-name'),
+			]
+		);
+
+		$this->add_control(
+			'3rd_link',
+			[
+				'label' => __('Section Link', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::URL,
+				'default' => __('#', 'plugin-domain'),
+				'placeholder' => __('Enter link here', 'plugin-name'),
+			]
+		);
+
+		$this->end_controls_section();
+
+		// 4th section 
+
+		$this->start_controls_section(
+			'4th_section',
+			[
+				'label' => __('4th Section', 'plugin-name'),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'4th_title',
+			[
+				'label' => __('Section Title', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => 'Bespoke processing',
+				'placeholder' => __('Enter title here', 'plugin-name'),
+			]
+		);
+
+		$this->add_control(
+			'4th_description',
+			[
+				'label' => __('Description', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'default' => __('With impressive Precision Strip And Wire processing capabilities that include slitting and shearing, traverse winding, cut to length and edge dressing, you can have your material, your way.', 'plugin-domain'),
+				'placeholder' => __('Enter link here', 'plugin-name'),
+			]
+		);
+
+		$this->add_control(
+			'4th_link',
+			[
+				'label' => __('Section Link', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::URL,
+				'default' => __('#', 'plugin-domain'),
+				'placeholder' => __('Enter link here', 'plugin-name'),
+			]
+		);
+
+		$this->end_controls_section();
 	}
 
 	/**
@@ -109,36 +232,42 @@ class Home_What_We_Can extends Widget_Base {
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function render() {
+	protected function render()
+	{
 
 		$settings = $this->get_settings_for_display();
 
 		$title = $settings['title'];
-		$videoUrl = $settings['video_url'];
-		$wireBtnUrl = $settings['wire_url'];
-		$stripBtnUrl = $settings['strip_url'];
-		$getQuoteBtnUrl = $settings['getQuoteBtnUrl'];
+		$_1st_title = $settings['1st_title'];
+		$_1st_link = $settings['1st_link'];
+		$_1st_description = $settings['1st_description'];
+		$_2nd_title = $settings['2nd_title'];
+		$_2nd_link = $settings['2nd_link'];
+		$_2nd_description = $settings['2nd_description'];
+		$_3rd_title = $settings['3rd_title'];
+		$_3rd_link = $settings['3rd_link'];
+		$_3rd_description = $settings['3rd_description'];
+		$_4th_title = $settings['4th_title'];
+		$_4th_link = $settings['4th_link'];
+		$_4th_description = $settings['4th_description'];
 
 		echo '<div class="container what-we-can">';
 		echo '	<div class="inner-container">';
-		echo '		<h3 class="what-we-can-heading">'. $title .'</h3>';
+		echo '		<h3 class="what-we-can-heading">' . $title . '</h3>';
 		echo '		<div class="fuild-container">';
 		echo '			<div class="row">';
 		echo '				<div class="col-sm-12 col-md-6">';
 		echo '					<div class="card card-container">';
 		echo '						<div class="card-body">';
 		echo '							<div class="card-title-container">';
-		echo '								<a href="#">';
-		echo '								<h5 class="card-title">Bespoke processing</h5>';
+		echo '								<a href="' . $_1st_link . '">';
+		echo '								<h5 class="card-title">' . $_1st_title . '</h5>';
 		echo '								<svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">';
 		echo '									<path d="M13 -6.11959e-07L11.59 1.41L16.17 6L6.99382e-07 6L5.24537e-07 8L16.17 8L11.58 12.59L13 14L20 7L13 -6.11959e-07Z" fill="#69BFF0"/>';
 		echo '								</svg>';
 		echo '								</a>';
 		echo '							</div>';
-		echo '							<p class="card-text">';
-		echo '								With impressive Precision Strip And Wire processing capabilities that include slitting and shearing, traverse winding,';
-		echo '								cut to length and edge dressing, you can have your material, your way.';
-		echo '							</p>';
+		echo '							<p class="card-text">' . $_1st_description . '</p>';
 		echo '						</div>';
 		echo '					</div>';
 		echo '				</div>';
@@ -146,17 +275,14 @@ class Home_What_We_Can extends Widget_Base {
 		echo '					<div class="card card-container">';
 		echo '						<div class="card-body">';
 		echo '							<div class="card-title-container">';
-		echo '								<a href="#">';
-		echo '								<h5 class="card-title">Bespoke processing</h5>';
+		echo '								<a href="' . $_2nd_link . '">';
+		echo '								<h5 class="card-title">' . $_2nd_title . '</h5>';
 		echo '								<svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">';
 		echo '									<path d="M13 -6.11959e-07L11.59 1.41L16.17 6L6.99382e-07 6L5.24537e-07 8L16.17 8L11.58 12.59L13 14L20 7L13 -6.11959e-07Z" fill="#69BFF0" />';
 		echo '								</svg>';
 		echo '								</a>';
 		echo '							</div>';
-		echo '							<p class="card-text">';
-		echo '								With impressive Precision Strip And Wire processing capabilities that include slitting and shearing, traverse winding,';
-		echo '								cut to length and edge dressing, you can have your material, your way.';
-		echo '							</p>';
+		echo '							<p class="card-text">' . $_2nd_description . '</p>';
 		echo '						</div>';
 		echo '					</div>';
 		echo '				</div>';
@@ -165,19 +291,14 @@ class Home_What_We_Can extends Widget_Base {
 		echo '					<div class="card card-container">';
 		echo '						<div class="card-body">';
 		echo '							<div class="card-title-container">';
-		echo '								<a href="#">';
-		echo '									<h5 class="card-title">';
-		echo '										Bespoke processing';
-		echo '									</h5>';
+		echo '								<a href="' . $_3rd_link . '">';
+		echo '									<h5 class="card-title"> ' . $_3rd_title . ' </h5>';
 		echo '									<svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">';
 		echo '										<path d="M13 -6.11959e-07L11.59 1.41L16.17 6L6.99382e-07 6L5.24537e-07 8L16.17 8L11.58 12.59L13 14L20 7L13 -6.11959e-07Z" fill="#69BFF0"/>';
 		echo '									</svg>';
 		echo '								</div>';
 		echo '							</a>';
-		echo '							<p class="card-text">';
-		echo '								With impressive Precision Strip And Wire processing capabilities that include slitting and shearing, traverse winding,';
-		echo '								cut to length and edge dressing, you can have your material, your way.';
-		echo '							</p>';
+		echo '							<p class="card-text">' . $_3rd_description . '</p>';
 		echo '						</div>';
 		echo '					</div>';
 		echo '				</div>';
@@ -185,17 +306,14 @@ class Home_What_We_Can extends Widget_Base {
 		echo '					<div class="card card-container">';
 		echo '						<div class="card-body">';
 		echo '							<div class="card-title-container">';
-		echo '								<a href="#">';
-		echo '								<h5 class="card-title">Bespoke processing</h5>';
+		echo '								<a href="' . $_4th_link . '">';
+		echo '								<h5 class="card-title">' . $_4th_title . '</h5>';
 		echo '								<svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">';
 		echo '									<path d="M13 -6.11959e-07L11.59 1.41L16.17 6L6.99382e-07 6L5.24537e-07 8L16.17 8L11.58 12.59L13 14L20 7L13 -6.11959e-07Z" fill="#69BFF0"/>';
 		echo '								</svg>';
 		echo '							</a>';
 		echo '							</div>';
-		echo '							<p class="card-text">';
-		echo '								With impressive Precision Strip And Wire processing capabilities that include slitting and shearing, traverse winding,';
-		echo '								cut to length and edge dressing, you can have your material, your way.';
-		echo '							</p>';
+		echo '							<p class="card-text">' . $_4th_description . '</p>';
 		echo '						</div>';
 		echo '					</div>';
 		echo '				</div>';
