@@ -63,76 +63,14 @@ class Browse_All_Sidebar extends Widget_Base
     );
 
     $repeater->add_control(
-      'list_item_display_icon',
+      'is_sub_item',
       [
-        'label'         => __('Icon', "plugin-name"),
-        'type'          => Controls_Manager::CHOOSE,
-        'options'       => [
-          'none'  => [
-            'title' => __('None', "plugin-name"),
-            'icon'  => 'fa fa-ban',
-          ],
-          // 'icon'  => [
-          // 	'title' => __('Icon', "plugin-name"),
-          // 	'icon'  => 'fa fa-info-circle',
-          // ],
-          'image'  => [
-            'title' => __('Image', "plugin-name"),
-            'icon'  => 'fas fa-image',
-          ],
-        ],
-        'default'       => 'image',
-      ]
-    );
-
-    $repeater->add_control(
-      'list_item_image',
-      [
-        'type'          => Controls_Manager::MEDIA,
-        'default'       => [
-          'url'       => Utils::get_placeholder_image_src(),
-        ],
-        'condition'     => [
-          'list_item_display_icon'   => 'image',
-        ],
-      ]
-    );
-
-    $repeater->add_control(
-      'list_item_icon',
-      [
-        'type'          => Controls_Manager::ICONS,
-        'default'       => [
-          'value'     => 'fas fa-leaf',
-          'library'   => 'fa-solid',
-        ],
-        'condition'     => [
-          'list_item_display_icon'   => 'icon',
-        ],
-      ]
-    );
-
-    $repeater->add_control(
-      'list_item_icon_color',
-      [
-        'label'         => __('Icon Color', "plugin-name"),
-        'type'          => Controls_Manager::COLOR,
-        'default'       => '#ffffff',
-        'condition'     => [
-          'list_item_display_icon'   => 'icon',
-        ],
-      ]
-    );
-
-    $repeater->add_control(
-      'list_item_icon_bg_color',
-      [
-        'label'         => __('Icon Background Color', "plugin-name"),
-        'type'          => Controls_Manager::COLOR,
-        'default'       => '#ff8181',
-        'condition'     => [
-          'list_item_display_icon'   => 'icon',
-        ],
+        'label' => __('Is sub item', 'plugin-name'),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'label_on' => esc_html__('Yes', 'your-plugin'),
+        'label_off' => esc_html__('No', 'your-plugin'),
+        // 'return_value' => 'No',
+        'default' => 'No',
       ]
     );
 
@@ -201,41 +139,35 @@ class Browse_All_Sidebar extends Widget_Base
     $box_overlay = $settings['box_overlay'];
 ?>
 
-    <!-- <div id="sticky-sidebar"> -->
-      <div class="browse-all-sidebar-container ">
-        <?php $count = 0;
-        foreach ($settings['list_items'] as $items => $item) {
-          $icon = $item['list_item_icon']['value'];
-          $title = $item['list_item_title'];
-          $list_item_link = $item['list_item_link'];
-          // $content = $item['list_item_content'];
-          $icon_color = $item['list_item_icon_color'];
-          $icon_bg_color = $item['list_item_icon_bg_color'];
-        ?>
+    <div class="browse-all-sidebar-container" id="fixed">
+      <h2 class="browse-all-sidebar-title">By Material</h2>
 
-          <div class="call-outs-list-item">
-            <?php if ($item['list_item_display_icon'] === 'image') { ?>
-              <img src="<?php echo $item['list_item_image']['url']; ?>" class="call-outs-list-item-image" />
-            <?php } ?>
-            <div class="call-outs-list-item-content-box">
-              <?php
-              if ($list_item_link['url'] == null) {
-              ?>
-                <h2 class="call-outs-list-item-title"><?php echo $title; ?></h2>
-              <?php
-              } else {
-              ?>
-                <a href=<?php echo $list_item_link['url']; ?> class="call-outs-list-item-link">
-                  <h2 class="call-outs-list-item-title"><?php echo $title; ?></h2>
-                </a>
+      <nav class="list-group" id="list-example">
+        <ul class="sub collapse show" id="menuSpy">
+          <?php $count = 0;
+          foreach ($settings['list_items'] as $items => $item) {
+            $icon = $item['list_item_icon']['value'];
+            $title = $item['list_item_title'];
+            $list_item_link = $item['list_item_link'];
+            // $content = $item['list_item_content'];
+            $is_sub_item = $item['is_sub_item'];
+          ?>
+            <a class="list-group-item list-group-item-action <?php if ($is_sub_item == "yes") {echo "browse-all-sidebar-list-sub-item";} ?> <?php if ($count == 1) {echo "active";} ?>" href="<?php echo $list_item_link['url']; ?>"><?php echo $title; ?></a>
 
-              <?php } ?>
-            </div>
-          </div>
-        <?php $count = $count + 1;
-        } ?>
-      </div>
-    <!-- </div> -->
+          <?php $count = $count + 1;
+          } ?>
+        </ul>
+      </nav>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $('body').scrollspy({
+          target: '#list-example',
+          spy: "scroll",
+          offset: 50,
+        });
+      })
+    </script>
 <?php
   }
 }

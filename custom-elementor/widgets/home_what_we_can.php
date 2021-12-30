@@ -363,7 +363,7 @@ class Home_What_We_Can extends Widget_Base
 		}
 		
 		.card-container {
-			min-width: 407px;
+			width: 100%;
 			border-radius: 0;
 			background-color: #14314a;
 		}
@@ -416,7 +416,11 @@ class Home_What_We_Can extends Widget_Base
 			text-decoration: none;
 			border-radius: 0 !important;
 		}
-		/*# sourceMappingURL=styles.css.map */
+		@media (max-width: 767px) {
+			.page-title-video {
+				max-height: 100vh;
+			}
+		}
 		</style>';
 	}
 }

@@ -15,7 +15,7 @@ class Elementor_Widgets
 
     protected function __construct()
     {
-        // require_once('widgets/tabs.php');
+        require_once('widgets/kg_table.php');
         require_once('widgets/post-grid.php');
         require_once('widgets/accordion.php');
         require_once('widgets/call_outs.php');
@@ -34,7 +34,7 @@ class Elementor_Widgets
 
     public function register_widgets()
     {
-        // \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Tabs());
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Kg_Table());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Call_Outs());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Accordion());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Box_sector());
