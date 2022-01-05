@@ -239,16 +239,16 @@ class Home_What_We_Can extends Widget_Base
 
 		$title = $settings['title'];
 		$_1st_title = $settings['1st_title'];
-		$_1st_link = $settings['1st_link'];
+		$_1st_link = $settings['1st_link']['url'];
 		$_1st_description = $settings['1st_description'];
 		$_2nd_title = $settings['2nd_title'];
-		$_2nd_link = $settings['2nd_link'];
+		$_2nd_link = $settings['2nd_link']['url'];
 		$_2nd_description = $settings['2nd_description'];
 		$_3rd_title = $settings['3rd_title'];
-		$_3rd_link = $settings['3rd_link'];
+		$_3rd_link = $settings['3rd_link']['url'];
 		$_3rd_description = $settings['3rd_description'];
 		$_4th_title = $settings['4th_title'];
-		$_4th_link = $settings['4th_link'];
+		$_4th_link = $settings['4th_link']['url'];
 		$_4th_description = $settings['4th_description'];
 
 		echo '<div class="container what-we-can">';
