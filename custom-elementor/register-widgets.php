@@ -24,6 +24,7 @@ class Elementor_Widgets
         require_once('widgets/section_title.php');
         require_once('widgets/curved_button.php');
         require_once('widgets/home_page_title.php');
+        require_once('widgets/post_navigators.php');
         require_once('widgets/home_what_we_can.php');
         require_once('widgets/full_width_button.php');
         require_once('widgets/natural_page_title.php');
@@ -42,6 +43,7 @@ class Elementor_Widgets
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Section_Title());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Curved_Button());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Home_Page_Title());
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Post_Navigators());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Home_What_We_Can());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Full_Width_Button());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Natural_Page_Title());

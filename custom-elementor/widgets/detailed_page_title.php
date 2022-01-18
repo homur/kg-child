@@ -327,7 +327,7 @@ class Detailed_Page_Title extends Widget_Base
 		echo '						<a href="' . $getQuoteBtnUrl . '" class="btn btn-primary button" role="button" aria-pressed="true"><p>Get a quote</p></a>';
 		echo '					</div>';
 		if ($downloads_SWITCHER == "yes") {
-			echo ' 					<div class="buttons-container buttons-dropdown-container">';
+			echo ' 					<div class="buttons-container buttons-dropdown-container material-downloads-btn-container">';
 			echo '						<div class="dropdown">';
 			echo '							<button class="btn btn-secondary dropdown-toggle material-downloads-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
 			echo 								$downloads_button_text;

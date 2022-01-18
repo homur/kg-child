@@ -246,8 +246,10 @@ add_action( 'widgets_init', 'tutsplus_widgets_init' );
 
 // add_action( 'after_setup_theme', 'understrap' );
 
-// function cc_mime_types($mimes) {
-//   $mimes['svg'] = 'image/svg+xml';
-//   return $mimes;
-// }
-// add_filter('upload_mimes', 'cc_mime_types');
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+require_once "motaz.php";

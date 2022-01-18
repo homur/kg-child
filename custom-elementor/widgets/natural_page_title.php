@@ -182,7 +182,7 @@ class Natural_Page_Title extends Widget_Base
 		$is_help_page = $settings['is_help_page'];
 
 		echo '<div class="natural-page-title" style="background-image: url(' . $page_title_bg_url['url'] . ');">';
-		echo '	<div class="container"> ';
+		echo '	<div class="container natural-page-title-container"> ';
 		echo '		<div class="natural-page-title-texts-container">';
 		echo '			<h2 class="natural-page-title-text">' . $title . '</h2>';
 		if ($is_help_page == "yes") {

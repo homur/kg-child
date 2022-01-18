@@ -245,6 +245,7 @@ class Understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
 		// Form a string of classes in format: class="class_names".
 		$menu_cstm_type = get_post_meta( $item->ID, '_menu_cstm_type', true );
+		// echo $menu_cstm_type;
 		if ( $menu_cstm_type === 'section_title' ) {
 			$linkmod_classes[] = 'dropdown-header';
 		}

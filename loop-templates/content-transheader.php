@@ -1,7 +1,8 @@
 <?php
 /**
  * Partial template for content in transparent-header.php
- *
+ * Template Name: transparent-header
+ * Template Post Type: post, page, product
  * @package Understrap
  */
 

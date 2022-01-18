@@ -122,7 +122,7 @@ $container = get_theme_mod('understrap_container_type');
 							'menu_class'      => 'navbar-nav mr-auto',
 							'fallback_cb'     => '',
 							'menu_id'         => 'main-menu',
-							'depth'           => 2,
+							'depth'           => 5,
 							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 						)
 					);
