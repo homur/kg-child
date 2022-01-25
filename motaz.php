@@ -291,12 +291,14 @@ class Understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
 		// If item has_children add atts to <a>.
 		if ( isset( $args->has_children ) && $args->has_children && 1 !== $args->depth ) {
-			$atts['href']          = '#';
+			// $atts['href']          = '#';
+			// $atts.removeAttr()
 			// $atts['data-toggle']   = 'dropdown';
 			$atts['aria-haspopup'] = 'true';
 			$atts['aria-expanded'] = 'false';
 			$atts['class']         = 'dropdown-toggle nav-link';
 			$atts['id']            = 'menu-item-dropdown-' . $item->ID;
+			// console.log($atts);
 		} else {
 			$atts['href'] = ! empty( $item->url ) ? $item->url : '#';
 			// Items in dropdowns use .dropdown-item instead of .nav-link.
@@ -306,7 +308,7 @@ class Understrap_WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 				$atts['class'] = 'nav-link';
 			}
 		}
-
+		// var_dump($atts['href'] );
 		$atts['aria-current'] = $item->current ? 'page' : '';
 
 		// update atts of this item based on any custom linkmod classes.

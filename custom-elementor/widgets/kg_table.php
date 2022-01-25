@@ -78,7 +78,7 @@ class Kg_Table extends Widget_Base
     $this->start_controls_section(
       'section_timeline_list_items',
       array(
-        'label'         => __('Accorsion Items', "plugin-name"),
+        'label'         => __('Table Items', "plugin-name"),
       )
     );
 
