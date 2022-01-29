@@ -38,7 +38,7 @@ $container = get_theme_mod('understrap_container_type');
     <div class="row">
       <?php
       if (is_active_sidebar('first-footer-widget-area')) : ?>
-        
+
         <div class="col-md col-sm-12" tabindex="-1">
 
           <?php dynamic_sidebar('first-footer-widget-area'); ?>
@@ -89,6 +89,19 @@ $container = get_theme_mod('understrap_container_type');
 
 </div>
 <!-- #page we need this extra closing tag here -->
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <?php get_search_form() ?>
+      </div>
+    </div>
+  </div>
+</div>
 
 <?php wp_footer(); ?>
 

@@ -119,9 +119,10 @@ class Curved_Button extends Widget_Base
 		$button_color = $settings["button_color"];
 		$button_width = $settings["button_width"];
 		$button_text_color = $settings["button_text_color"];
+		$is_active = $settings["button_text"] == 'All' ? 'active' : '';
 
 		echo '<div class="carved-button-container" style="width: ' . $button_width . '">';
-		echo '	<a href="#" class="btn btn-primary btn-block carved-button" style="background-color: ' . $button_color . '" role="button" aria-pressed="true">';
+		echo '	<a href="#" class="btn btn-primary btn-block carved-button strip-wire-filter '.$is_active.'" style="background-color: ' . $button_color . '" role="button" aria-pressed="true">';
 		echo '		<div class="carved-button-content">';
 		echo '			<p class="carved-button-title" style="color:' . $button_text_color . '">' . $button_text . '</p>';
 		echo '		</div>';
