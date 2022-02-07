@@ -12283,6 +12283,7 @@ nav.kg-navbar {
   width: 0%;
   height: 70px;
   float: right;
+  margin: 0;
   overflow: hidden;
   transition: width 0.3s;
 }
@@ -12342,8 +12343,14 @@ nav.kg-navbar {
   height: 24px;
 }
 
+.searchbar-icon {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
 .searchbar-submit {
-  padding: 22px;
+  padding: 23px;
 }
 
 .searchbar-open {
