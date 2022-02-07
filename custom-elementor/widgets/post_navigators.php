@@ -96,8 +96,8 @@ class Post_Navigators extends Widget_Base
 		// $button_text = $settings["button_text"];
 		// $button_url = $settings["button_url"]['url'];
 		$variable = get_field('view_all_post');
-		$term_name = get_term( $variable )->name;
-		$term_slug = get_term( $variable )->slug;
+		$term_name = get_term($variable)->name;
+		$term_slug = get_term($variable)->slug;
 
 		// var_dump($variable);
 
@@ -112,8 +112,9 @@ class Post_Navigators extends Widget_Base
 					?>
 				</div>
 				<div class="single-post-navigator-all-posts">
-					
-					<a href="/category/<?php echo $term_slug; ?>"><?php echo $term_name; ?></a>
+					<?php if ($term_slug) : ?>
+						<a href="/category/<?php echo $term_slug; ?>">View all <?php echo $term_name; ?> posts</a>
+					<?php endif; ?>
 				</div>
 				<div class="single-post-navigator-next-btn">
 					<?php
