@@ -391,23 +391,32 @@ background-color: #69BFF0
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-}
-.grades-list-item .grades-list-item-icons {
-  display: inline-flex;
-}
-.grades-list-item svg:first-child {
-  margin-left: 22px;
-}
-.grades-list-item svg:last-child {
-  margin-left: 12px;
-}
-.grades-list-item a {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 21px;
-  max-width: 72%;
-  color: #69bff0 !important;
-  text-transform: capitalize;
+  a {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+    max-width: 72%;
+    color: #69bff0 !important;
+    text-transform: capitalize;
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+    max-width: 72%;
+    color: #262D36 !important;
+    text-transform: capitalize;
+  }
+  .grades-list-item-icons {
+    display: inline-flex;
+  }
+  svg:first-child {
+    margin-left: 22px;
+  }
+  svg:last-child {
+    margin-left: 12px;
+  }
 }
 .grades-list-title {
   font-size: 22px;
