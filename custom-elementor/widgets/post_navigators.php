@@ -57,25 +57,25 @@ class Post_Navigators extends Widget_Base
 			]
 		);
 
-		$this->add_control(
-			'button_text',
-			[
-				'label' => __('View all Button Text', 'plugin-name'),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __('Button', 'plugin-domain'),
-				'placeholder' => __('Button', 'plugin-name'),
-			]
-		);
+		// $this->add_control(
+		// 	'button_text',
+		// 	[
+		// 		'label' => __('View all Button Text', 'plugin-name'),
+		// 		'type' => \Elementor\Controls_Manager::TEXT,
+		// 		'default' => __('Button', 'plugin-domain'),
+		// 		'placeholder' => __('Button', 'plugin-name'),
+		// 	]
+		// );
 
-		$this->add_control(
-			'button_url',
-			[
-				'label' => __('View all Button Url', 'plugin-name'),
-				'type' => \Elementor\Controls_Manager::URL,
-				'default' => __('Button', 'plugin-domain'),
-				'placeholder' => __('Button', 'plugin-name'),
-			]
-		);
+		// $this->add_control(
+		// 	'button_url',
+		// 	[
+		// 		'label' => __('View all Button Url', 'plugin-name'),
+		// 		'type' => \Elementor\Controls_Manager::URL,
+		// 		'default' => __('Button', 'plugin-domain'),
+		// 		'placeholder' => __('Button', 'plugin-name'),
+		// 	]
+		// );
 
 		$this->end_controls_section();
 	}
@@ -93,8 +93,13 @@ class Post_Navigators extends Widget_Base
 
 		$settings = $this->get_settings_for_display();
 
-		$button_text = $settings["button_text"];
-		$button_url = $settings["button_url"]['url'];
+		// $button_text = $settings["button_text"];
+		// $button_url = $settings["button_url"]['url'];
+		$variable = get_field('view_all_post');
+		$term_name = get_term( $variable )->name;
+		$term_slug = get_term( $variable )->slug;
+
+		// var_dump($variable);
 
 ?>
 		<div class="container single-post-navigator-container">
@@ -107,7 +112,8 @@ class Post_Navigators extends Widget_Base
 					?>
 				</div>
 				<div class="single-post-navigator-all-posts">
-					<a href="<?php echo $button_url; ?>"><?php echo $button_text; ?></a>
+					
+					<a href="/category/<?php echo $term_slug; ?>"><?php echo $term_name; ?></a>
 				</div>
 				<div class="single-post-navigator-next-btn">
 					<?php

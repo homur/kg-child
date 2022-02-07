@@ -28,6 +28,9 @@ $container = get_theme_mod('understrap_container_type');
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" type="text/javascript"></script> -->
+
 
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -64,8 +67,45 @@ $container = get_theme_mod('understrap_container_type');
 				// init
 				toggleAffix(ele, jQuery(window), wrapper);
 			});
-
+			let submitIcon = jQuery(".searchbar-icon")
+			let inputBox = jQuery(".searchbar-input")
+			let searchbar = jQuery(".searchbar")
+			let isOpen = false
+			submitIcon.click(function() {
+				if (isOpen == false) {
+					searchbar.addClass("searchbar-open")
+					inputBox.focus()
+					isOpen = true
+				} else {
+					searchbar.removeClass("searchbar-open")
+					inputBox.focusout()
+					isOpen = false
+				}
+			})
+			submitIcon.mouseup(function() {
+				return false
+			})
+			searchbar.mouseup(function() {
+				return false
+			})
+			jQuery(document).mouseup(function() {
+				if (isOpen == true) {
+					jQuery(".searchbar-icon").css("display", "block")
+					submitIcon.click()
+				}
+			})
 		});
+
+		function buttonUp() {
+			let inputVal = jQuery(".searchbar-input").val()
+			inputVal = jQuery.trim(inputVal).length
+			if (inputVal !== 0) {
+				jQuery(".searchbar-icon").css("display", "none")
+			} else {
+				jQuery(".searchbar-input").val("")
+				jQuery(".searchbar-icon").css("display", "block")
+			}
+		}
 	</script>
 </head>
 
@@ -139,16 +179,23 @@ $container = get_theme_mod('understrap_container_type');
 					<!-- <button>Get a quote</button> -->
 					<div class="input-group cstm-search-input-group-desktop">
 						<div class="input-group-append">
-							<!-- id="search-button" -->
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-									<path d="M0 0h24v24H0V0z" fill="none" />
-									<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-								</svg>
-							</button>
-							<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-										Launch demo modal
-									</button> -->
+							<div class="searchbar-container">
+								<form class="searchbar">
+									<input type="search" placeholder="Search here" name="search" class="searchbar-input" onkeyup="buttonUp();" required />
+									<!-- <input type="submit" class="searchbar-submit" value="GO"> -->
+									<svg id="search-button" class="searchbar-submit" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+										<path d="M0 0h24v24H0V0z" fill="none" />
+										<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+									</svg>
+									<span class="searchbar-icon" />
+									<!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+										<path d="M0 0h24v24H0V0z" fill="none" />
+										<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+									</svg>
+									</span>
+								</form>
+							</div>
 						</div>
 					</div>
 					<button class="btn btn-outline-secondary nav-bar-contact-buttons nav-bar-get-a-quote" type="button">
@@ -168,79 +215,4 @@ $container = get_theme_mod('understrap_container_type');
 
 		</div>
 
-
-		<!-- <div id="wrapper-navbar-fixed" data-toggle="affix"> -->
-
-		<!-- <a class="skip-link sr-only sr-only-focusable" href="#content"><? php // esc_html_e('Skip to content', 'understrap'); 
-																																				?></a> -->
-
-		<!-- <nav id="main-nav" class="navbar kg-navbar navbar-expand-md" aria-labelledby="main-nav-label"> -->
-
-		<!-- <h2 id="main-nav-label affix-navbar" class="sr-only"> -->
-		<?php //esc_html_e('Main Navigation', 'understrap'); 
-		?>
-		<!-- </h2> -->
-
-		<?php //if ('container' === $container) : 
-		?>
-		<!-- <div class="container"> -->
-		<? php // endif; 
-		?>
-
-		<!-- Your site title as branding in the menu -->
-		<? php // if (!has_custom_logo()) { 
-		?>
-
-		<? php // if (is_front_page() && is_home()) : 
-		?>
-
-		<!-- <h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url(home_url('/')); ?>" itemprop="url"><?php bloginfo('name'); ?></a></h1> -->
-
-		<? php // else : 
-		?>
-
-		<!-- <a class="navbar-brand" rel="home" href="<?php echo esc_url(home_url('/')); ?>" itemprop="url"><?php bloginfo('name'); ?></a> -->
-
-		<?php //endif; 
-		?>
-
-		<?php
-		// } else {
-		// 	the_custom_logo();
-		// }
-		?>
-		<!-- end custom logo -->
-
-		<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'understrap'); ?>">
-						<span class="navbar-toggler-icon"></span>
-					</button> -->
-
-		<!-- The WordPress Menu goes here -->
-		<!-- <div class="affix-navbar-menu"> -->
-		<?php
-		// wp_nav_menu(
-		// 	array(
-		// 		'theme_location'  => 'primary',
-		// 		'container_class' => 'collapse navbar-collapse',
-		// 		'container_id'    => 'navbarNavDropdown',
-		// 		'menu_class'      => 'navbar-nav mr-auto',
-		// 		'fallback_cb'     => '',
-		// 		'menu_id'         => 'main-menu',
-		// 		'depth'           => 5,
-		// 		'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-		// 	)
-		// );
-		?>
-		<!-- </div> -->
-		<!-- <? php // if ('container' === $container) : 
-					?> -->
-		<!-- </div> -->
-		<!-- .container -->
-		<!-- <? php // endif; 
-					?> -->
-
-		<!-- </nav> -->
-		<!-- .site-navigation -->
-
-		<!-- </div> -->
 		<!-- #wrapper-navbar end -->

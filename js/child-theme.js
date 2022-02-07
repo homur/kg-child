@@ -9682,7 +9682,45 @@
     // jQuery("#search-button").on("click", function () {
     //   window.location.href = `${siteUrl}?s=${jQuery("#search-value").val()}`
     // })
-  }, 100);
+  }, 100); // jQuery(document).ready(function () {
+  //   var submitIcon = jQuery(".searchbar-icon")
+  //   var inputBox = jQuery(".searchbar-input")
+  //   var searchbar = jQuery(".searchbar")
+  //   var isOpen = false
+  //   submitIcon.click(function () {
+  //     if (isOpen == false) {
+  //       searchbar.addClass("searchbar-open")
+  //       inputBox.focus()
+  //       isOpen = true
+  //     } else {
+  //       searchbar.removeClass("searchbar-open")
+  //       inputBox.focusout()
+  //       isOpen = false
+  //     }
+  //   })
+  //   submitIcon.mouseup(function () {
+  //     return false
+  //   })
+  //   searchbar.mouseup(function () {
+  //     return false
+  //   })
+  //   jQuery(document).mouseup(function () {
+  //     if (isOpen == true) {
+  //       jQuery(".searchbar-icon").css("display", "block")
+  //       submitIcon.click()
+  //     }
+  //   })
+  // })
+  // function buttonUp() {
+  //   var inputVal = jQuery(".searchbar-input").val()
+  //   inputVal = jQuery.trim(inputVal).length
+  //   if (inputVal !== 0) {
+  //     jQuery(".searchbar-icon").css("display", "none")
+  //   } else {
+  //     jQuery(".searchbar-input").val("")
+  //     jQuery(".searchbar-icon").css("display", "block")
+  //   }
+  // }
 
   exports.Alert = Alert;
   exports.Button = Button;
