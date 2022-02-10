@@ -1543,6 +1543,11 @@ area.customize-unpreviewable {
     justify-content: flex-end;
   }
 }
-
+.available-grades-buttons-column {
+  .elementor-widget-Curved.Button {
+    &:last-child {
+      margin-right: 10px;
+    }
+  }
+}
 // .post-page-share-buttons
-
