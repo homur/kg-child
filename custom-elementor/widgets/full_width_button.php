@@ -100,6 +100,17 @@ class Full_Width_Button extends Widget_Base
 			]
 		);
 
+		$this->add_control(
+			'button_url',
+			[
+				'label' => __('Button URL', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::URL,
+				'default' => [
+					'url' => '',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 	}
 
@@ -119,6 +130,10 @@ class Full_Width_Button extends Widget_Base
 		$button_text = $settings["button_text"];
 		$button_color = $settings["button_color"];
 		$button_text_color = $settings["button_text_color"];
+
+		if ( ! empty( $settings['button_url']['url'] ) ) {
+			$this->add_link_attributes( 'button_url', $settings['button_url'] );
+		}
 		// $button_hover_color = $settings["button_hover_color"];
 		// $final_text_color;
 
@@ -130,7 +145,7 @@ class Full_Width_Button extends Widget_Base
 
 		// echo $final_text_color;
 
-		echo '<a href="#" class="btn btn-primary btn-block full-width-button" role="button" aria-pressed="true" style="background-color: '. $button_color .'">';
+		echo '<a '. $this->get_render_attribute_string( 'button_url' ) .' class="btn btn-primary btn-block full-width-button" role="button" aria-pressed="true" style="background-color: '. $button_color .'">';
 		echo '	<div class="full-width-button-content">';
 		echo '		<p class="full-width-button-title" style="color:'. $button_text_color .'">' . $button_text . '</p>';
 		echo '		<svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">';

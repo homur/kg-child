@@ -113,15 +113,6 @@ class Home_Page_Title extends Widget_Base
 			]
 		);
 
-		$this->add_control(
-			'wireBtnUrl',
-			[
-				'label' => __('wire button Url', 'plugin-name'),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => __('#', 'plugin-domain'),
-				'placeholder' => __('Enter link here', 'plugin-name'),
-			]
-		);
 
 		$this->add_control(
 			'wireBtnUrl',
@@ -161,8 +152,8 @@ class Home_Page_Title extends Widget_Base
 
 		$title = $settings['title'];
 		$videoUrl = $settings['video_url'];
-		$wireBtnUrl = $settings['wire_url'];
-		$stripBtnUrl = $settings['strip_url'];
+		$wireBtnUrl = $settings['wireBtnUrl'];
+		$stripBtnUrl = $settings['stripBtnUrl'];
 		$getQuoteBtnUrl = $settings['getQuoteBtnUrl'];
 
 		echo '<style>
