@@ -10625,6 +10625,11 @@ background-color: #69BFF0
   line-height: 48px;
 }
 
+.browse-all-section-title .custom-section-heading {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+
 /* Curved button styles */
 .carved-button {
   border: 0;

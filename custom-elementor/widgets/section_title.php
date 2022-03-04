@@ -84,8 +84,9 @@ class Section_Title extends Widget_Base
 				'label' => __('Devider Color', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'COLOR',
-				'default' => __('#69BFF0', 'plugin-domain'),
-				'placeholder' => __('#69BFF0', 'plugin-name'),
+				'default' => __('#EFF1F5', 'plugin-domain'),
+				// old default color: #69BFF0
+				'placeholder' => __('#EFF1F5', 'plugin-name'),
 			]
 		);
 
@@ -128,7 +129,7 @@ class Section_Title extends Widget_Base
 		echo '		<rect class="section-heading-icon" width="120" height="2.05128" fill=' . $divider_color . ' />';
 		echo '	</svg>';
 		}
-		echo '	<h2 class="custom-section-heading" style="color: ' . $title_color . '">' . $title . '</h2>';
+		echo '	<h2 class="custom-section-heading" style="color: ' . $title_color . '; border-bottom: 2px solid '. $divider_color . '";">' . $title . '</h2>';
 		echo '</div>';
 	}
 }
