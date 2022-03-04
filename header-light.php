@@ -97,7 +97,7 @@ $container = get_theme_mod('understrap_container_type');
 			let inputVal = jQuery(".searchbar-input").val()
 			inputVal = jQuery.trim(inputVal).length
 			if (inputVal !== 0) {
-				jQuery(".searchbar-icon").css("display", "none")
+				jQuery(".searchbar-icon").addClass("display-none-important")
 			} else {
 				jQuery(".searchbar-input").val("")
 				jQuery(".searchbar-icon").css("display", "block")

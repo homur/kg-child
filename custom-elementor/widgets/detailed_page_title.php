@@ -343,7 +343,7 @@ class Detailed_Page_Title extends Widget_Base
 ?>
 				<div class="downloads-list-item">
 					<div class="downloads-list-item-content-box">
-						<a class="dropdown-item" href="<?php echo $list_item_link; ?>"><?php echo $title; ?></a>
+						<a class="dropdown-item" target="_blank" href="<?php echo $list_item_link; ?>"><?php echo $title; ?></a>
 					</div>
 				</div>
 <?php $count = $count + 1;

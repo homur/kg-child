@@ -187,7 +187,7 @@ class Natural_Page_Title extends Widget_Base
 		echo '			<h2 class="natural-page-title-text">' . $title . '</h2>';
 		if ($is_help_page == "yes") {
 			echo ' <div class="help-buttons-container">';
-			echo '<p class="help-buttons-title">Help</p>';
+			// echo '<p class="help-buttons-title">Help</p>';
 			$count = 0;
 			foreach ($settings['list_items'] as $items => $item) {
 				$title = $item['list_item_title'];

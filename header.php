@@ -100,7 +100,7 @@ $container = get_theme_mod('understrap_container_type');
 			let inputVal = jQuery(".searchbar-input").val()
 			inputVal = jQuery.trim(inputVal).length
 			if (inputVal !== 0) {
-				jQuery(".searchbar-icon").css("display", "none")
+				jQuery(".searchbar-icon").addClass("display-none-important")
 			} else {
 				jQuery(".searchbar-input").val("")
 				jQuery(".searchbar-icon").css("display", "block")
@@ -181,7 +181,7 @@ $container = get_theme_mod('understrap_container_type');
 						<div class="input-group-append">
 							<div class="searchbar-container">
 								<form class="searchbar">
-									<input type="search" placeholder="Search here" name="search" class="searchbar-input" onkeyup="buttonUp();" required />
+									<input type="search" placeholder="Search here" name="s" class="searchbar-input" onkeyup="buttonUp();" required />
 									<!-- <input type="submit" class="searchbar-submit" value="GO"> -->
 									<svg id="search-button" class="searchbar-submit" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
 										<path d="M0 0h24v24H0V0z" fill="none" />
