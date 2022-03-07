@@ -34,13 +34,13 @@ $medium: 992px;
     left: 0;
     // position: absolute;
     position: fixed !important;
-    top: 90px;
+    top: 110px;
     padding: 60px;
     border: 0;
     background: #f7f7f8;
     border-radius: 0;
     @media screen and (min-width: $medium) {
-      height: calc(100vh - 90px);
+      height: calc(100vh - 110px);
     }
     // flex-flow: row wrap;
     // justify-content: end;
