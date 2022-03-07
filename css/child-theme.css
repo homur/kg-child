@@ -10435,6 +10435,13 @@ background-color: #69BFF0
   margin-bottom: 20px;
 }
 
+.detailed-page-title-all-button-container {
+  display: flex;
+}
+.detailed-page-title-all-button-container .detailed-page-title-all-button {
+  margin-right: 10px;
+}
+
 .material-page-title-all-button,
 .detailed-page-title-all-button {
   padding: 0 !important;
@@ -10602,7 +10609,7 @@ background-color: #69BFF0
 
 .page-title-heading {
   font-size: 72px;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 85px;
   font-feature-settings: "pnum" on, "lnum" on, "ordn" on, "ss01" on, "ss04" on, "ss06" on, "ss11" on, "ss09" on, "liga" off;
   margin-bottom: 20px;

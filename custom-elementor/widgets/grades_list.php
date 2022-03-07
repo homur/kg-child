@@ -67,6 +67,15 @@ class Grades_List extends Widget_Base
 				'placeholder' => __('Title', 'plugin-name'),
 			]
 		);
+		$this->add_control(
+			'list_title_link',
+			[
+				'label' => __('List Title Link', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::URL,
+				'default' => __('Title', 'plugin-domain'),
+				'placeholder' => __('Title', 'plugin-name'),
+			]
+		);
 
 		$this->add_control(
 			'list_title_color',
@@ -145,12 +154,13 @@ class Grades_List extends Widget_Base
 		$list_items = $settings['list_items'];
 		$list_title_color = $settings["list_title_color"];
 		$is_link_disabled = $settings["is_link_disabled"];
+		$title_url = $settings["list_title_link"]["url"] ? $settings["list_title_link"]["url"] : 'javascript:void(0)';
 
 		global $posts_urls;
 		$site_url = get_option('siteurl');
 
 		echo '	<div class="grades-list-container">';
-		echo '		<div class="grades-list-title" style="color: ' . $list_title_color . '">' . $list_title . '</div>';
+		echo '		<div class="grades-list-title" style="color: ' . $list_title_color . '"><a href="' . $title_url . '" class="grades-list-icon">' . $list_title . '</a></div>';
 		foreach ($list_items as $list_item_id) {
 			$current_post = $posts_urls[$list_item_id]['post'];
 			$current_types = $posts_urls[$list_item_id]['types'];

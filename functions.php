@@ -45,6 +45,7 @@ define('CHILD_THEME_DIR', trailingslashit(dirname(__FILE__)));
 $kg_includes = array(
   'custom-elementor/register-categories.php',
   'custom-elementor/register-widgets.php',
+  'motaz.php'
 );
 
 
@@ -259,6 +260,3 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
-
-
-require_once "motaz.php";

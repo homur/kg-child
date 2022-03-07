@@ -147,7 +147,7 @@ class Detailed_Page_Title extends Widget_Base
 		$this->add_control(
 			'all_materials_link',
 			[
-				'label' => __('Before title link', 'plugin-name'),
+				'label' => __('Before title link 1', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::URL,
 				'default' => __('#', 'plugin-domain'),
 				'placeholder' => __('Enter link here', 'plugin-name'),
@@ -157,7 +157,27 @@ class Detailed_Page_Title extends Widget_Base
 		$this->add_control(
 			'all_materials_text',
 			[
-				'label' => __('Before title text', 'plugin-name'),
+				'label' => __('Before title text 1', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => __('All materials', 'plugin-domain'),
+				'placeholder' => __('Enter link here', 'plugin-name'),
+			]
+		);
+		
+		$this->add_control(
+			'all_materials_link_2',
+			[
+				'label' => __('Before title link 2', 'plugin-name'),
+				'type' => \Elementor\Controls_Manager::URL,
+				'default' => __('#', 'plugin-domain'),
+				'placeholder' => __('Enter link here', 'plugin-name'),
+			]
+		);
+
+		$this->add_control(
+			'all_materials_text_2',
+			[
+				'label' => __('Before title text 2', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => __('All materials', 'plugin-domain'),
 				'placeholder' => __('Enter link here', 'plugin-name'),
@@ -274,21 +294,28 @@ class Detailed_Page_Title extends Widget_Base
 		$go_to_button_text = $settings['go_to_button_text'];
 		$description_title = $settings['description_title'];
 		$all_materials_link = $settings['all_materials_link'];
+		$all_materials_link_2 = $settings['all_materials_link_2'];
 		$downloads_SWITCHER = $settings['downloads_SWITCHER'];
 		$downloads_button_text = $settings['downloads_button_text'];
 		$all_materials_text = $settings['all_materials_text'];
+		$all_materials_text_2 = $settings['all_materials_text_2'];
 
 		echo '<div class="detailed-page-title-hero" style="background-image: url(' . $bg_image_url['url'] . ')">';
 		echo '	<div class="detailed-page-title-container">';
 		echo '		<div class="detailed-page-title-content-container">';
 		echo '			<div class="detailed-page-title-content-inner-container page-title-content-inner-container">';
 		echo '				<div class="detailed-page-title-headings-container page-title-headings-container">';
-		echo '					<a class="btn btn-link detailed-page-title-all-button" href="' . $all_materials_link['url'] . '" role="button">';
-		echo '						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">';
-		echo '							<path d="M18 10C18 14.41 14.41 18 10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10ZM20 10C20 4.48 15.52 0 10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10ZM10 11H14V9H10V6L6 10L10 14V11Z" fill="#69BFF0" />';
-		echo '						</svg>';
-		echo '						<p>' . $all_materials_text . '</p>';
-		echo '					</a>';
+		echo '					<div class="detailed-page-title-all-button-container" href="' . $all_materials_link['url'] . '" role="button">';
+		echo '						<a class="btn btn-link detailed-page-title-all-button" href="' . $all_materials_link['url'] . '" role="button">';
+		echo '							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">';
+		echo '								<path d="M18 10C18 14.41 14.41 18 10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10ZM20 10C20 4.48 15.52 0 10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10ZM10 11H14V9H10V6L6 10L10 14V11Z" fill="#69BFF0" />';
+		echo '							</svg>';
+		echo '							<p>' . $all_materials_text . '</p>';
+		echo '						</a>';
+		echo '						<a class="btn btn-link detailed-page-title-all-button" href="' . $all_materials_link_2['url'] . '" role="button">';
+		echo '							<p>' . $all_materials_text_2 . '</p>';
+		echo '						</a>';
+		echo '					</div>';
 		echo '	 				<h3 class="detailed-page-title-heading page-title-heading">' . $title . '</h3>';
 		echo '					<h6 class="detailed-page-title-sub-heading page-title-sub-heading"> ' . $sub_title . ' </h6>';
 		echo '					<p class="detailed-page-title-description page-title-description">' . $description_title . '</p>';
