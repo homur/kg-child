@@ -201,7 +201,7 @@ $container = get_theme_mod('understrap_container_type');
 						</a>
 					</button>
 					<button class="btn btn-outline-secondary nav-bar-contact-buttons nav-bar-buy-direct" type="button">
-						<a href="/contact-us/">
+						<a href="javascript:void(0)">
 							Buy direct
 						</a>
 						<div class="d-none buy-direct-contents d-none">
