@@ -12070,7 +12070,7 @@ nav.kg-navbar {
   width: 100vw;
   left: 0;
   position: fixed !important;
-  top: 110px;
+  top: 90px;
   padding: 60px;
   border: 0;
   background: #f7f7f8;
@@ -12078,7 +12078,7 @@ nav.kg-navbar {
 }
 @media screen and (min-width: 992px) {
   .mega_menu > .dropdown-menu {
-    height: calc(100vh - 110px);
+    height: calc(100vh - 90px);
   }
 }
 .mega_menu > .dropdown-menu > li {
@@ -12333,6 +12333,7 @@ nav.kg-navbar {
 .nav-bar-buy-direct {
   margin-left: 2px;
   background-color: #a6adb5;
+  position: relative;
 }
 .nav-bar-buy-direct:hover {
   background-color: #a6adb5 !important;
@@ -12344,6 +12345,25 @@ nav.kg-navbar {
 .nav-bar-buy-direct:focus {
   box-shadow: none !important;
   background-color: #a6adb5 !important;
+}
+.nav-bar-buy-direct .buy-direct-contents {
+  position: absolute;
+  right: 0;
+  background-color: #a6adb5;
+  top: 73px;
+  width: 200px;
+  z-index: 9999;
+}
+.nav-bar-buy-direct .buy-direct-contents ul {
+  margin: 0;
+  padding: 0;
+}
+.nav-bar-buy-direct .buy-direct-contents ul li {
+  list-style: none;
+  border-bottom: 1px solid black;
+}
+.nav-bar-buy-direct .buy-direct-contents ul li:last-of-type {
+  border-bottom: none;
 }
 
 .nav-bar-helper-buttons {

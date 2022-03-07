@@ -16,6 +16,7 @@ function understrap_remove_scripts()
 add_action('wp_enqueue_scripts', 'understrap_remove_scripts', 20);
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+
 function theme_enqueue_styles()
 {
 
@@ -41,20 +42,26 @@ add_action('after_setup_theme', 'add_child_theme_textdomain');
 define('CHILD_THEME_DIR', trailingslashit(dirname(__FILE__)));
 
 // Includes list
-$rbc_includes = array(
+$kg_includes = array(
   'custom-elementor/register-categories.php',
   'custom-elementor/register-widgets.php',
 );
 
 
 // Require Includes
-foreach ($rbc_includes as $fp) {
+foreach ($kg_includes as $fp) {
   $include_path = CHILD_THEME_DIR . $fp;
   if (file_exists($include_path)) {
     //echo file_get_contents(CHILD_THEME_DIR . $fp);
     require_once $include_path;
   }
 }
+
+// Register menu locations
+function kg_custom_new_menu() {
+  register_nav_menu('buy-direct',__( 'Buy Direct' ));
+}
+add_action( 'init', 'kg_custom_new_menu' );
 
 // Create Materials custom post tyoe
 function crunchify_materials_custom_post_type()
@@ -251,5 +258,7 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+
 
 require_once "motaz.php";

@@ -204,6 +204,20 @@ $container = get_theme_mod('understrap_container_type');
 						<a href="/contact-us/">
 							Buy direct
 						</a>
+						<div class="d-none buy-direct-contents d-none">
+						<?php
+							wp_nav_menu(
+								array(
+									'theme_location'  => 'buy-direct',
+									'container_class' => 'buy-direct-dropdown-container',
+									'fallback_cb'     => '',
+									'menu_id'         => 'buy-direct-menu-contents',
+									'depth'           => 1,
+									'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+								)
+							);
+							?>
+						</div>
 					</button>
 
 				</div>

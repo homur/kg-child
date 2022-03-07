@@ -34,13 +34,13 @@ $medium: 992px;
     left: 0;
     // position: absolute;
     position: fixed !important;
-    top: 110px;
+    top: 90px;
     padding: 60px;
     border: 0;
     background: #f7f7f8;
     border-radius: 0;
     @media screen and (min-width: $medium) {
-      height: calc(100vh - 110px);
+      height: calc(100vh - 90px);
     }
     // flex-flow: row wrap;
     // justify-content: end;
@@ -336,6 +336,8 @@ $medium: 992px;
 .nav-bar-buy-direct {
   margin-left: 2px;
   background-color: #a6adb5;
+  position: relative;
+
   &:hover {
     background-color: #a6adb5 !important;
   }
@@ -346,6 +348,29 @@ $medium: 992px;
   &:focus {
     box-shadow: none !important;
     background-color: #a6adb5 !important;
+  }
+
+  .buy-direct-contents {
+    position: absolute;
+    right: 0;
+    background-color: #a6adb5;
+    top: 73px;
+    width: 200px;
+    z-index: 9999;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        border-bottom: 1px solid black;
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
+    }
   }
 }
 .nav-bar-helper-buttons {
