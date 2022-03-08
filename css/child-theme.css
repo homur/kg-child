@@ -10609,7 +10609,7 @@ background-color: #69BFF0
 
 .page-title-heading {
   font-size: 72px;
-  font-weight: 700;
+  font-weight: 700 !important;
   line-height: 85px;
   font-feature-settings: "pnum" on, "lnum" on, "ordn" on, "ss01" on, "ss04" on, "ss06" on, "ss11" on, "ss09" on, "liga" off;
   margin-bottom: 20px;
@@ -12006,9 +12006,13 @@ form .display-none-important {
   position: relative;
 }
 .what-we-can .inner-container {
-  min-width: 461px;
   margin-left: 17px;
   margin-right: 17px;
+}
+@media (min-width: 550px) {
+  .what-we-can .inner-container {
+    min-width: 461px;
+  }
 }
 .what-we-can .card-container {
   width: 100%;
