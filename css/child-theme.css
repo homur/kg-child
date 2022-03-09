@@ -10921,7 +10921,7 @@ background-color: #69BFF0
 }
 
 .natural-page-title-texts-container {
-  margin: 140px 0 60px;
+  margin: 140px 0 20px;
 }
 
 .natural-page-sub-title-text {
@@ -11617,6 +11617,7 @@ area.customize-unpreviewable {
 
 .natural-page-title-container {
   max-width: 1280px;
+  padding-bottom: 60px;
 }
 
 .wpcap-grid-container .post-grid-inner {

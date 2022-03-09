@@ -66,7 +66,7 @@ class Natural_Page_Title extends Widget_Base
 		$this->add_control(
 			'page_title_bg_url',
 			[
-				'label' => __('Background url', 'plugin-name'),
+				'label' => __('Background Image', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default'       => [
 					'url'       => Utils::get_placeholder_image_src(),
@@ -185,28 +185,27 @@ class Natural_Page_Title extends Widget_Base
 		echo '	<div class="container natural-page-title-container"> ';
 		echo '		<div class="natural-page-title-texts-container">';
 		echo '			<h2 class="natural-page-title-text">' . $title . '</h2>';
-		if ($is_help_page == "yes") {
-			echo ' <div class="help-buttons-container">';
-			// echo '<p class="help-buttons-title">Help</p>';
-			$count = 0;
-			foreach ($settings['list_items'] as $items => $item) {
-				$title = $item['list_item_title'];
-				$list_item_link = $item['list_item_link']['url'];
-				$list_item_icon = $item['list_item_icon']['url'];
-?>
-				<div class="help-buttons-list-item">
-					<a class="help-buttons-item" href="<?php echo $list_item_link; ?>">
-					<?php echo $title; ?>
-					<img src="<?php echo $list_item_icon; ?>" alt="help button" class="help-buttons-list_item_icon"/>
-					</a>
-				</div>
-<?php $count = $count + 1;
-			}
-			echo ' </div>';
-		} else {
-			echo '			<p class="natural-page-sub-title-text">' . $sub_title . '</p>';
-		}
+		echo '			<p class="natural-page-sub-title-text">' . $sub_title . '</p>';		
 		echo '		</div>';
+
+			if ($is_help_page == "yes") {
+				echo ' <div class="help-buttons-container">';
+				foreach ($settings['list_items'] as $items => $item) {
+					$title = $item['list_item_title'];
+					$list_item_link = $item['list_item_link']['url'];
+					$list_item_icon = $item['list_item_icon']['url'];
+					?>
+					<div class="help-buttons-list-item">
+						<a class="help-buttons-item" href="<?php echo $list_item_link; ?>">
+						<?php echo $title; ?>
+						<img src="<?php echo $list_item_icon; ?>" alt="help button" class="help-buttons-list_item_icon"/>
+						</a>
+					</div>
+					<?php
+				}
+				echo ' </div>';
+			} 
+			
 		echo '	</div>';
 		echo '</div>';
 	}
