@@ -81,7 +81,7 @@ class Section_Title extends Widget_Base
 		$this->add_control(
 			'divider_color',
 			[
-				'label' => __('Devider Color', 'plugin-name'),
+				'label' => __('Divider Color', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'COLOR',
 				'default' => __('#EFF1F5', 'plugin-domain'),
@@ -93,11 +93,11 @@ class Section_Title extends Widget_Base
 		$this->add_control(
 			'hide_divider',
 			[
-				'label' => __('hide_divider', 'plugin-name'),
+				'label' => __('Hide Divider', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'label_on' => esc_html__('Show', 'your-plugin'),
 				'label_off' => esc_html__('Hide', 'your-plugin'),
-				// 'return_value' => 'No',
+				'return_value' => 'yes',
 				'default' => 'No',
 			]
 		);
@@ -124,12 +124,12 @@ class Section_Title extends Widget_Base
 		$hide_divider = $settings['hide_divider'];
 
 		echo '<div class="cfuild-ontainer">';
-		if ($hide_divider == "No") {
+		if ($hide_divider !== "yes") {
 		echo '	<svg width="120" height="3" viewBox="0 0 120 3" fill="none" xmlns="http://www.w3.org/2000/svg">';
 		echo '		<rect class="section-heading-icon" width="120" height="2.05128" fill=' . $divider_color . ' />';
 		echo '	</svg>';
 		}
-		echo '	<h2 class="custom-section-heading" style="color: ' . $title_color . '; border-bottom: 2px solid '. $divider_color . '";">' . $title . '</h2>';
+		echo '	<h2 class="custom-section-heading" style="color: ' . $title_color . '";">' . $title . '</h2>';
 		echo '</div>';
 	}
 }
