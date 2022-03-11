@@ -107,6 +107,7 @@ const myTimeout = setTimeout(function () {
   })
 })(jQuery)
 
+
 setTimeout(function () {
   jQuery(
     ".custom-logo-link"
