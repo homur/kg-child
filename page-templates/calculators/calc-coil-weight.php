@@ -1,14 +1,4 @@
 <?php
-/*
- * Template Name: Calc - Coil Weight
- * Description: Coil Weight calculator
- */
-
-get_header();
-
-the_post();
-
-the_content();
 
 //set up the defaults
 $msg_warn = "";
@@ -144,7 +134,7 @@ $form_block .= "</select>
 		<div class='title'>Weight kilo:</div>
 		<div class='input'><input type = \"text\" name=\"pWeight\" value=\"\"  size=10></div>	
 	</div>
-<p><input type=\"submit\" name=\"submit\" value=\"Calculate\"></p>
+<p><input type=\"submit\" name=\"submit\" class=\"btn btn-primary button\" value=\"Calculate\"></p>
 </form>
 ";
  
@@ -152,21 +142,6 @@ $form_block .= "</select>
 trim($width);
 trim($gauge);
 trim($length);
-
-//!is_numeric($width)||
-//!is_numeric($gauge)||
-
-
-//--- START Display HTML -------//
-?>
-<article class="boldSection topSemiSpaced bottomSemiSpaced gutter inherit">
-	<div class="port">
-		<div class="boldCell">
-			<div class="boldCellInner">
-				<div class="boldRow">
-					<div class="rowItem col-md-9 col-ms-12 btTextLeft">
-<?php
- 
 
 if(!is_numeric($gauge)||!is_numeric($width)||!is_numeric($length)||!is_numeric($pWeight))
 {
@@ -231,19 +206,5 @@ if ($width  == ""||$gauge  == "") {
 }else{
 	echo "$form_block"; 
 }
-?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</article>
-<?php
-
-//--- END Display HTML -------//
-
-//get_sidebar();
-
-get_footer(); 
 
 ?>

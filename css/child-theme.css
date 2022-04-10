@@ -12519,4 +12519,17 @@ nav.kg-navbar {
   width: 100%;
 }
 
+.calculator-wrapper .form-row {
+  margin: 0 0 15px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.calculator-wrapper .form-row .title {
+  margin-right: 10px;
+}
+.calculator-wrapper input, .calculator-wrapper select {
+  height: 40px;
+}
+
 /*# sourceMappingURL=child-theme.css.map */

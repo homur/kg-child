@@ -1,14 +1,4 @@
 <?php
-/*
- * Template Name: Calc - Metric
- * Description: Metric calculator
- */
-
-get_header();
-
-the_post();
-
-the_content();
 
 // array of key (what to convert) and value (description of it)
 //$convert_array[cmin] = "centimeters to inches";
@@ -65,22 +55,10 @@ $form_block .= "<option value=\""
 $form_block .= "</select></div>
 </div>
 
-<input type=\"submit\" name=\"submit\" value=\"Calculate\">
+<input type=\"submit\" name=\"submit\" class=\"btn btn-primary button\" value=\"Calculate\">
 </form>
 ";
- 
 
-
-//--- START Display HTML -------//
-?>
-<article class="boldSection topSemiSpaced bottomSemiSpaced gutter inherit">
-	<div class="port">
-		<div class="boldCell">
-			<div class="boldCellInner">
-				<div class="boldRow">
-					<div class="rowItem col-md-9 col-ms-12 btTextLeft">
-<?php
-// remove commas and spaces
 trim($value1);
 $valuetemp = str_replace(",", "", $value1);
 $value = str_replace(" ", "", $valuetemp);
@@ -199,18 +177,4 @@ echo "$form_block";
 } 
 
 ?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</article>
-<?php
-
-//--- END Display HTML -------//
-
-//get_sidebar();
-
-get_footer(); 
-
-?>
+ 

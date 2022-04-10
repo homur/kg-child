@@ -1,14 +1,4 @@
 <?php
-/*
- * Template Name: Calc - Timber Volume
- * Description: Timber Volumne calculator
- */
-
-get_header();
-
-the_post();
-
-the_content();
 
 //set up the defaults
 $length = "483";
@@ -42,21 +32,11 @@ $form_block = "
 	<div class='input'><input type = \"text\" name=\"thickness\" value=\"$thickness\"  size=10></div>
 </div>
 
-<p><input type=\"submit\" name=\"submit\" value=\"Calculate\"></p>
+<p><input type=\"submit\" name=\"submit\" class=\"btn btn-primary button\" value=\"Calculate\"></p>
 </form>
 ";
  
 
-
-//--- START Display HTML -------//
-?>
-<article class="boldSection topSemiSpaced bottomSemiSpaced gutter inherit">
-	<div class="port">
-		<div class="boldCell">
-			<div class="boldCellInner">
-				<div class="boldRow">
-					<div class="rowItem col-md-9 col-ms-12 btTextLeft">
-<?php
 // remove commas and spaces
 trim($width);
 trim($thickness);
@@ -80,19 +60,5 @@ echo "<p>Volume in cubic metres:&nbsp;&nbsp; <strong>".number_format($volume,2).
 echo "<hr>";
 echo "$form_block"; 
 }
-?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</article>
-<?php
-
-//--- END Display HTML -------//
-
-//get_sidebar();
-
-get_footer(); 
 
 ?>

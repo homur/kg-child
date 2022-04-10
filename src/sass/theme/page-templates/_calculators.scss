@@ -1,0 +1,16 @@
+.calculator-wrapper {
+    .form-row {
+        margin: 0 0 15px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+
+        .title {
+            margin-right: 10px;
+        }
+    }
+
+    input, select {
+        height: 40px;
+    }
+}

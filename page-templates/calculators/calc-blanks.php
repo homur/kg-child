@@ -1,14 +1,4 @@
 <?php
-/*
- * Template Name: Calc - Blanks
- * Description: Blanks calculator
- */
-
-get_header();
-
-the_post();
-
-the_content();
 
 //set up the defaults
 $weight ="1000.00";
@@ -81,7 +71,7 @@ $form_block .= "</select></p>
 	<div class='input'><input type = \"text\" name=\"blank_length\" value=\"$blank_length\"  size=10></div>
 </div>
 
-<p><input type=\"submit\" name=\"submit\" value=\"Calculate\"></p>
+<p><input type=\"submit\" name=\"submit\" class=\"btn btn-primary button\" value=\"Calculate\"></p>
 </form>
 ";
  
@@ -90,6 +80,7 @@ trim($weight);
 trim($width);
 trim($gauge);
 trim($blank_length);
+
 if(!is_numeric($weight)||!is_numeric($width)||!is_numeric($gauge)||!is_numeric($blank_length))
 {
   $width="";
@@ -108,45 +99,18 @@ if(!is_numeric($weight)||!is_numeric($width)||!is_numeric($gauge)||!is_numeric($
 	}
 }
 
-
-//--- START Display HTML -------//
-?>
-<article class="boldSection topSemiSpaced bottomSemiSpaced gutter inherit">
-	<div class="port">
-		<div class="boldCell">
-			<div class="boldCellInner">
-				<div class="boldRow">
-					<div class="rowItem col-md-9 col-ms-12 btTextLeft">
-<?php
- 
 // in case no number is entered, the page refreshes
-if ($width  == ""||$gauge  == ""||$length  == "") {
-       
-		echo $msg_warn; 
-		echo "<hr>";echo "$form_block";
+if ($width  == "" || $gauge  == ""|| $length  == "") {
+	echo $msg_warn; 
+	echo "<hr>";echo "$form_block";
 } 
 else{
-echo "<h3>Results</h3>";
-echo "<p>Density tonnes /m<sup>3</sup> metres:&nbsp;&nbsp; <strong>$density</strong></p>";
-echo "<p>Length metres:&nbsp;&nbsp; <strong>".intval($length)."</strong></p>";
-echo "<p>Blank Count:&nbsp;&nbsp; <strong>".intval($blank)."</strong></p>";
-echo "<hr>";
-echo "$form_block"; 
+	echo "<h3>Results</h3>";
+	echo "<p>Density tonnes /m<sup>3</sup> metres:&nbsp;&nbsp; <strong>$density</strong></p>";
+	echo "<p>Length metres:&nbsp;&nbsp; <strong>".intval($length)."</strong></p>";
+	echo "<p>Blank Count:&nbsp;&nbsp; <strong>".intval($blank)."</strong></p>";
+	echo "<hr>";
+	echo "$form_block"; 
 }
-
-?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</article>
-<?php
-
-//--- END Display HTML -------//
-
-//get_sidebar();
-
-get_footer(); 
 
 ?>

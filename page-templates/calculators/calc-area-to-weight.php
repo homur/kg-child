@@ -1,15 +1,4 @@
 <?php
-/*
- * Template Name: Calc - Area to Weight
- * Description: Area to Weight calculator
- */
-
-get_header();
-
-the_post();
-
-the_content();
-
 
 //set up the defaults
 $area = "100.00";
@@ -78,7 +67,7 @@ $form_block .= "</select>
 	<div class='input'><input type = \"text\" name=\"gauge\" value=\"$gauge\"  size=10></div>
 </div>
 
-<p><input type=\"submit\" name=\"submit\" value=\"Calculate\"></p>
+<p><input type=\"submit\" name=\"submit\" class=\"btn btn-primary button\" value=\"Calculate\"></p>
 </form>
 ";
  
@@ -86,52 +75,23 @@ $form_block .= "</select>
 trim($area);
 trim($gauge);
 
-
-
-
-//--- START Display HTML -------//
-?>
-<article class="boldSection topSemiSpaced bottomSemiSpaced gutter inherit">
-	<div class="port">
-		<div class="boldCell">
-			<div class="boldCellInner">
-				<div class="boldRow">
-					<div class="rowItem col-md-9 col-ms-12 btTextLeft">
-						
-<?php
 if(!is_numeric($area)||!is_numeric($gauge))
 {
-  $area="";
-  $gauge="";
-  $msg_warn = "<h2>Please enter a Number.</h2>";
+$area="";
+$gauge="";
+$msg_warn = "<h2>Please enter a Number.</h2>";
 }
- 
+
 // in case no number is entered, the page refreshes
 if ($area  == ""||$gauge  == "") {
         echo $msg_warn; 
-		echo "<hr>";
-		echo "$form_block";
+        echo "<hr>";
+        echo "$form_block";
 } 
 else{
-	echo "<p>Density tonnes/m<sup>3</sup> metres:&nbsp;&nbsp; <strong>". number_format($density,2)."</strong></p>";
-	echo "<p>Weight kilos:&nbsp;&nbsp; <strong>". number_format($weight,2) ."</strong></p>";
-	echo "<hr>";echo "$form_block"; 
+    echo "<p>Density tonnes/m<sup>3</sup> metres:&nbsp;&nbsp; <strong>". number_format($density,2)."</strong></p>";
+    echo "<p>Weight kilos:&nbsp;&nbsp; <strong>". number_format($weight,2) ."</strong></p>";
+    echo "<hr>";echo "$form_block"; 
 }
-
-?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</article>
-<?php
-
-//--- END Display HTML -------//
-//
-//
-// get_sidebar();
-
-get_footer(); 
 
 ?>
