@@ -136,46 +136,6 @@ function crunchify_create_materials_custom_taxonomy()
 // Let us create Taxonomy for Custom Post Type
 add_action('init', 'crunchify_create_materials_custom_taxonomy', 0);
 
-// function crunchify_material_keys_custom_post_type()
-// {
-//   $labels = array(
-//     'name'                => __('Material Keys'),
-//     'singular_name'       => __('Material'),
-//     'menu_name'           => __('Material Keys'),
-//     'parent_item_colon'   => __('Parent Material key'),
-//     'all_items'           => __('All Material Keys'),
-//     'view_item'           => __('View Material key'),
-//     'add_new_item'        => __('Add New Material key'),
-//     'add_new'             => __('Add New'),
-//     'edit_item'           => __('Edit Material key'),
-//     'update_item'         => __('Update Material key'),
-//     'search_items'        => __('Search Material key'),
-//     'not_found'           => __('Not Found'),
-//     'not_found_in_trash'  => __('Not found in Trash')
-//   );
-//   $args = array(
-//     'label'               => __('material keys'),
-//     'description'         => __('Best Crunchify Material Keys'),
-//     'labels'              => $labels,
-//     'supports'            => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'),
-//     'public'              => true,
-//     'hierarchical'        => false,
-//     'show_ui'             => true,
-//     'show_in_menu'        => true,
-//     'show_in_nav_menus'   => true,
-//     'show_in_admin_bar'   => true,
-//     'has_archive'         => true,
-//     'can_export'          => true,
-//     'exclude_from_search' => false,
-//     'yarpp_support'       => true,
-//     'taxonomies'           => array('post_tag'),
-//     'publicly_queryable'  => true,
-//     'capability_type'     => 'page'
-//   );
-//   register_post_type('materialkeys', $args);
-// }
-// add_action('init', 'crunchify_material_keys_custom_post_type', 0);
-
 
 function tutsplus_widgets_init() {
  
@@ -238,25 +198,21 @@ function tutsplus_widgets_init() {
 add_action( 'widgets_init', 'tutsplus_widgets_init' );
 
 
-// function themename_custom_logo_setup() {
-//   $defaults = array(
-//       'height'               => 100,
-//       'width'                => 400,
-//       'flex-height'          => true,
-//       'flex-width'           => true,
-//       'header-text'          => array( 'site-title', 'site-description' ),
-//       'unlink-homepage-logo' => true, 
-//       'default-image' => get_parent_theme_file_uri( '/img/header.jpg' )
-//   );
-
-//   add_theme_support( 'custom-logo2', $defaults );
-// }
-
-// add_action( 'after_setup_theme', 'understrap' );
 
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+
+
+// Overriding read more button from understrap
+add_filter( 'wp_trim_excerpt', 'understrap_all_excerpts_get_more_link' );
+function understrap_all_excerpts_get_more_link( $post_excerpt ) {
+  if ( ! is_admin() ) {
+    $post_excerpt = $post_excerpt;
+  }
+  return $post_excerpt;
+}
 
