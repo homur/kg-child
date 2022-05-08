@@ -12321,6 +12321,7 @@ nav.kg-navbar {
   font-weight: 600;
   line-height: 19px;
   padding: 25px 22px;
+  text-align: center;
 }
 .nav-bar-contact-buttons a:hover {
   text-decoration: none;
@@ -12380,16 +12381,23 @@ nav.kg-navbar {
 .nav-bar-helper-buttons {
   display: flex;
 }
+@media screen and (max-width: 1222px) {
+  .nav-bar-helper-buttons {
+    position: absolute;
+    right: 0;
+    top: 70px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .nav-bar-helper-buttons {
+    display: none;
+  }
+}
 
 .cstm-search-input-group-mobile {
   display: none;
 }
 
-@media screen and (max-width: 767px) {
-  .nav-bar-helper-buttons {
-    display: none;
-  }
-}
 @media screen and (min-width: 990px) {
   .navbar-expand-md .navbar-toggler {
     display: none !important;

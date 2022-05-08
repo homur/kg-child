@@ -3,7 +3,7 @@
 //set up the defaults
 $area = "100.00";
 $gauge = "0.050";
-$material = 0;
+$material = 23;
 $material_type = array();
 
 

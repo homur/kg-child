@@ -5,7 +5,7 @@ $weight ="1000.00";
 $width = "18.00";
 $gauge = "4.00";
 $blank_length = "406.00";
-$material = 0;
+$material = 23;
 $material_type = array();
 
 //Material Type
