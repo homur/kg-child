@@ -10482,11 +10482,6 @@ background-color: #69BFF0
     margin-bottom: 40px;
   }
 
-  .detailed-page-title-hero {
-    height: 95vh;
-    min-height: initial !important;
-  }
-
   .help-buttons-item {
     justify-content: flex-start !important;
   }
@@ -10715,9 +10710,9 @@ background-color: #69BFF0
   background-size: cover;
   min-height: 861px;
 }
-@media screen and (min-width: 767px) {
+@media screen and (max-width: 767px) {
   .detailed-page-title-hero {
-    height: 861px;
+    min-height: 100vh;
   }
 }
 
@@ -10737,8 +10732,13 @@ background-color: #69BFF0
   display: flex;
   align-items: center;
   z-index: 1;
-  position: absolute;
   height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .detailed-page-title-content-container {
+    padding-top: 100px;
+    padding-bottom: 110px;
+  }
 }
 
 .detailed-page-title-container:after {
@@ -10749,17 +10749,14 @@ background-color: #69BFF0
   left: 0;
   top: 0;
   background: rgba(18, 21, 24, 0.4);
-}
-@media screen and (min-width: 767px) {
-  .detailed-page-title-container:after {
-    max-height: 861px;
-  }
+  z-index: 0;
 }
 
 .detailed-page-title-content-inner-container {
   width: 100%;
   margin: 0 auto;
   max-width: 991px;
+  z-index: 1;
 }
 
 .post-card-title {
@@ -12274,6 +12271,9 @@ nav.kg-navbar {
 }
 .mm-navbars_top .mm-navbar_size-3 {
   height: inherit;
+}
+.mm-navbars_top .mm-navbar_size-3 input[type=text] {
+  font-size: 14px;
 }
 
 .mm-menu_navbar_top-4 .mm-panels {

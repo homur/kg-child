@@ -242,10 +242,6 @@ background-color: #69BFF0
   .page-title-headings-container {
     margin-bottom: 40px;
   }
-  .detailed-page-title-hero {
-    height: 95vh;
-    min-height: initial !important;
-  }
   .help-buttons-item {
     justify-content: flex-start !important;
   }
@@ -461,8 +457,9 @@ background-color: #69BFF0
   width: 100%;
   background-size: cover;
   min-height: 861px;
-  @media screen and (min-width: 767px) {
-    height: 861px;
+
+  @media screen and (max-width: 767px) {
+    min-height: 100vh;
   }
 }
 .detailed-page-title-video {
@@ -479,26 +476,28 @@ background-color: #69BFF0
   display: flex;
   align-items: center;
   z-index: 1;
-  position: absolute;
   height: 100%;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 100px;
+    padding-bottom: 110px;
+  }
 }
 .detailed-page-title-container:after {
   width: 100%;
   content: "";
   position: absolute;
   height: 100%;
-
   left: 0;
   top: 0;
   background: rgba(18, 21, 24, 0.4);
-  @media screen and (min-width: 767px) {
-    max-height: 861px;
-  }
+  z-index: 0  ;
 }
 .detailed-page-title-content-inner-container {
   width: 100%;
   margin: 0 auto;
   max-width: 991px;
+  z-index: 1;
 }
 .post-card-title {
   font-size: 22px;

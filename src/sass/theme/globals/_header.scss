@@ -262,8 +262,13 @@ $medium: 992px;
 }
 .mm-navbars_top {
   height: 115px;
+
   .mm-navbar_size-3 {
     height: inherit;
+
+    input[type=text] {
+      font-size: 14px;
+    }
   }
 }
 .mm-menu_navbar_top-4 {
